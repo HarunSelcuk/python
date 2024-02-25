@@ -1,4 +1,6 @@
-
+# def and While true:
+# def ile daha sonra çagrılmak üzere işlem tanımlıyoruz. Böylece sürekli ayno kodu yazmaktan kurtuluyoruz.
+# "While true: " ile kodun Döngüye girmesini saglıyoruz.
 
 def weLcomepAge(): 
     print("Welcome")
@@ -20,6 +22,7 @@ def mult(x,y):
 def divis(x,y):
     Result((x//y))
 
+
 #Sonuç
 def Result(op):              # Burada "OP" Neden kullanıldı ?
     print("Result : ", op)  
@@ -28,26 +31,37 @@ def Result(op):              # Burada "OP" Neden kullanıldı ?
 #Kullanıcının görüdüğü. 
 def Mission():
     while True:
-        s1 = int(input("Enter a number : "))
-        s2 = input("Enter an math signs :")
-        s3 = int(input("Enter another number :"))
+        try:
+            
+                
+                s1 = int(input("Enter a number : "))
+                s2 = input("Enter an math signs :")
+                s3 = int(input("Enter another number :")) 
 
-        if s2 == "+":
-            add(s1,s3)
-        elif s2 =="-":
-            sub(s1,s3)
-        elif s2 == "*":
-            mult(s1,s3)
-        elif s2 == "/":
-            divis(s1,s3)
-        else:    
-            print("""unknown signs. Try again.
-                  """)
+            
+
+                if s2 == "+":
+                    add(s1,s3)
+                elif s2 =="-":
+                    sub(s1,s3)
+                elif s2 == "*":
+                    mult(s1,s3)
+                elif s2 == "/":
+                    divis(s1,s3)
+                else:    
+                    print("""unknown signs.
+Try again. """)
+        except ZeroDivisionError:
+            print("Result : 0")
+        except ValueError:
+            print("not a sign, just a number")
 
 # Kodun çalışma sırası.
 
 weLcomepAge()
+
 instructi()
+
 Mission()
 
     
